@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="See cake sizes and prices from Nila Home Bakery in Thrissur and place an order on WhatsApp.">
+    <title>Nila Home Bakery | Cakes in Thrissur</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="order.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="#top" aria-label="Nila Home Bakery, back to top">
+          <span>Nila</span>
+          <span>Home Bakery</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#menu">Cake menu</a>
+          <a href="#hours">Hours</a>
+        </nav>
+        <a class="button button-outline header-order" href="#order">Order a cake <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main id="main" class="wrap">
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+          <p class="hero-location">Thrissur, Kerala</p>
+          <h1 id="hero-heading">Cakes for your <em>next celebration</em></h1>
+          <p>Choose Chocolate, Black Forest or Red Velvet in ½ kg and 1 kg. Order directly on WhatsApp.</p>
+          <a class="button button-primary" href="#order">Order a cake <span aria-hidden="true">→</span></a>
+        </div>
+        <figure class="hero-picture">
+          <img src="images/hero.jpg" alt="Illustrative chocolate layer cake on a ceramic stand" fetchpriority="high">
+          <figcaption class="photo-label">Placeholder image</figcaption>
+        </figure>
+      </section>
+
+      <section id="menu" class="menu" aria-labelledby="menu-heading">
+        <div class="section-heading">
+          <h2 id="menu-heading">Cake menu</h2>
+          <p>Choose a cake to start your order.</p>
+        </div>
+
+        <!-- The form reads the cake names and prices directly from these cards. -->
+        <div class="cake-grid">
+          <article class="cake-card" data-cake="chocolate">
+            <figure class="cake-picture">
+              <img src="images/chocolate.jpg" alt="Illustrative slice of dark chocolate layer cake" loading="lazy">
+              <figcaption class="photo-label">Placeholder image</figcaption>
+            </figure>
+            <div class="cake-details">
+              <h3>Chocolate</h3>
+              <dl class="cake-prices">
+                <div><dt>½ kg</dt><dd data-size="half">₹275</dd></div>
+                <div><dt>1 kg</dt><dd data-size="one">₹550</dd></div>
+              </dl>
+              <button type="button" class="choose-cake" hidden>Choose cake <span class="visually-hidden">Chocolate</span><span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="cake-card" data-cake="black-forest">
+            <figure class="cake-picture">
+              <img src="images/black-forest.jpg" alt="Illustrative Black Forest cake slice with chocolate and a cherry" loading="lazy">
+              <figcaption class="photo-label">Placeholder image</figcaption>
+            </figure>
+            <div class="cake-details">
+              <h3>Black Forest</h3>
+              <dl class="cake-prices">
+                <div><dt>½ kg</dt><dd data-size="half">₹300</dd></div>
+                <div><dt>1 kg</dt><dd data-size="one">₹600</dd></div>
+              </dl>
+              <button type="button" class="choose-cake" hidden>Choose cake <span class="visually-hidden">Black Forest</span><span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+
+          <article class="cake-card" data-cake="red-velvet">
+            <figure class="cake-picture">
+              <img src="images/red-velvet.jpg" alt="Illustrative Red Velvet cake slice with cream-coloured layers" loading="lazy">
+              <figcaption class="photo-label">Placeholder image</figcaption>
+            </figure>
+            <div class="cake-details">
+              <h3>Red Velvet</h3>
+              <dl class="cake-prices">
+                <div><dt>½ kg</dt><dd data-size="half">₹350</dd></div>
+                <div><dt>1 kg</dt><dd data-size="one">₹650</dd></div>
+              </dl>
+              <button type="button" class="choose-cake" hidden>Choose cake <span class="visually-hidden">Red Velvet</span><span aria-hidden="true">→</span></button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="seasonal" aria-labelledby="plum-heading">
+        <div>
+          <h2 id="plum-heading">Christmas plum cake</h2>
+          <p>Ask us about availability on WhatsApp.</p>
+        </div>
+        <a class="button button-light" id="plum-enquiry" href="#contact">Enquire on WhatsApp <span aria-hidden="true">↗</span></a>
+      </section>
+
+      <section class="order-section" id="order" aria-labelledby="order-heading">
+        <div class="order-intro">
+          <h2 id="order-heading">Order a cake</h2>
+          <p>Tell us what you’d like and when you need it. We’ll confirm availability and how you can receive your order in the chat.</p>
+        </div>
+
+        <form class="order-form" id="order-form" hidden>
+          <div class="form-grid">
+            <div class="field">
+              <label for="cake">Cake</label>
+              <select id="cake" name="cake" required>
+                <option value="">Select a cake</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="size">Size</label>
+              <select id="size" name="size" required>
+                <option value="">Select a size</option>
+                <option value="half">½ kg</option>
+                <option value="one">1 kg</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="customer-name">Your name</label>
+              <input id="customer-name" name="customer-name" type="text" autocomplete="name" maxlength="100" pattern=".*\S.*" required>
+            </div>
+            <div class="field">
+              <label for="preferred-date">Preferred date</label>
+              <input id="preferred-date" name="preferred-date" type="date" required>
+            </div>
+            <div class="field field-wide">
+              <label for="notes">Order notes <span>(optional)</span></label>
+              <textarea id="notes" name="notes" rows="3" maxlength="500" placeholder="Anything else we should know?"></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <div class="price-summary">
+              <label for="price">Cake price</label>
+              <output id="price" for="cake size" aria-live="polite">—</output>
+            </div>
+            <button class="button button-primary" type="submit" aria-describedby="order-help">Continue to WhatsApp <span aria-hidden="true">↗</span></button>
+          </div>
+          <p id="order-help" class="form-help">Review the message in WhatsApp, then tap Send.</p>
+        </form>
+        <noscript>
+          <p class="order-fallback">To order a cake, <a href="#contact">contact us on WhatsApp</a>.</p>
+        </noscript>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>
+          <a class="wordmark" href="#top" aria-label="Nila Home Bakery, back to top">
+            <span>Nila</span>
+            <span>Home Bakery</span>
+          </a>
+          <p>Thrissur, Kerala</p>
+        </div>
+        <div id="hours">
+          <h2>Opening hours</h2>
+          <p>Tuesday–Sunday · 8 am–8 pm</p>
+          <p>Closed on Mondays</p>
+        </div>
+        <div id="contact">
+          <h2>WhatsApp</h2>
+          <a id="whatsapp-contact" href="https://wa.me/919000012345">+91 90000 12345</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

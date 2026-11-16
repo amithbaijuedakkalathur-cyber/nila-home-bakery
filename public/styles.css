@@ -275,7 +275,7 @@ h2 { font-size: clamp(2.15rem, 4vw, 3.4rem); line-height: 1.08; letter-spacing: 
   width: 100%;
   min-height: 2.9rem;
   padding: 0.5rem 0.68rem;
-  border: 1px solid #bca79b;
+  border: 1px solid #a18a7d;
   border-radius: 0.43rem;
   background: #fffdfa;
   color: var(--ink);
